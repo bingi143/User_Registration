@@ -20,7 +20,7 @@ def checking_first_name(first_name):
           Return : 
                 None
     '''
-    pattern=r'^[A-Z][a-z]{3,}$'
+    pattern=r'^[A-Z][a-z]{2,}$'
     if re.match(pattern,first_name):
         return True
 
