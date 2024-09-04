@@ -27,12 +27,35 @@ def checking_first_name(first_name):
     else:
         return False
 
+def checking_last_name(last_name):
+    '''
+          Description: 
+                This function is check the last name
+          Parameters: 
+                last_name(str): string
+          Return : 
+                None
+    '''
+    pattern=r'^[A-Z][a-z]{3,}$'
+    if re.match(pattern,last_name):
+        return True
+
+    else:
+        return False
+
+
 def main():
     first_name=input("Enter first name:")
+    last_name=input("Enter last name:")
     if checking_first_name(first_name):
          logger_init("UC_1").info("User first name is valid")
     else:
         logger_init("UC_1").info("User first name is not valid")
+
+    if checking_last_name(last_name):
+        logger_init("UC_2").info("user last name is valid")
+    else:
+        logger_init("UC_2").info("user last name is not valid")
 
 
 if __name__=="__main__":
