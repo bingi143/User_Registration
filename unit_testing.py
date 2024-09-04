@@ -10,20 +10,27 @@
 ''' 
 
 import unittest
-from user_registration import checking_first_name
+from user_registration import checking_first_name,checking_last_name
  
 class TestingUserRegistarion(unittest.TestCase):
     
     def test_first_name(self):
-        self.assertTrue(checking_first_name("arn"))
+        self.assertTrue(checking_first_name("Monkey"))
         self.assertFalse(checking_first_name("23Vwe"))
-        self.assertTrue(checking_first_name("VenKy"))
-        self.assertFalse(checking_first_name("Juewf"))
+        self.assertTrue(checking_first_name("Venkatesh"))
+        self.assertFalse(checking_first_name("juewf"))
 
+    def test_last_name(self):
+        self.assertTrue(checking_last_name("Bingi"))
+        self.assertFalse(checking_last_name("ponkey"))
+        self.assertTrue(checking_last_name("Sweet"))
+        self.assertFalse(checking_last_name("venkat"))
 
+ 
 def main():
     t1=TestingUserRegistarion()
     t1.test_first_name()
+    t1.test_last_name()
 
 
 if __name__=="__main__":
