@@ -104,13 +104,13 @@ def check_mobile_formet(mobile_number):
 def checking_password(password):
     '''
           Description: 
-                This function is checking password
+                This function is checking password al least one upper case
           Parameters: 
                 mobile_number(int): number
           Return : 
                 None
     '''
-    pattern=r'\w{8,}'
+    pattern=r'(?=.*[A-Z])\b\w{9,}\b'
     if re.match(pattern,password):
         return True
     else:
