@@ -15,18 +15,42 @@ from user_registration import checking_first_name,checking_last_name,email_verif
 class TestingUserRegistarion(unittest.TestCase):
     
     def test_first_name(self):
+        '''
+          Description: 
+                This function is testing the first name have start with capital
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(checking_first_name("Monkey"))
         self.assertFalse(checking_first_name("23Vwe"))
         self.assertTrue(checking_first_name("Venkatesh"))
         self.assertFalse(checking_first_name("juewf"))
 
     def test_last_name(self):
+        '''
+          Description: 
+                This function is testing the last name have start with capital
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(checking_last_name("Bingi"))
         self.assertFalse(checking_last_name("ponkey"))
         self.assertTrue(checking_last_name("Sweet"))
         self.assertFalse(checking_last_name("venkat"))
 
     def test_email(self):
+        '''
+          Description: 
+                This function is testing the email
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(email_verification("venky@bl.co.in"))
         self.assertTrue(email_verification("abc.xyz@bl.co"))
         self.assertTrue(email_verification("123@bl.co"))
