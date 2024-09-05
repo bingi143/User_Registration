@@ -15,12 +15,28 @@ from user_registration import checking_first_name,checking_last_name
 class TestingUserRegistarion(unittest.TestCase):
     
     def test_first_name(self):
+        '''
+          Description: 
+                This function is testing the first name have start with capital
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(checking_first_name("Monkey"))
         self.assertFalse(checking_first_name("23Vwe"))
         self.assertTrue(checking_first_name("Venkatesh"))
         self.assertFalse(checking_first_name("juewf"))
 
     def test_last_name(self):
+        '''
+          Description: 
+                This function is testing the last name have start with capital
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(checking_last_name("Bingi"))
         self.assertFalse(checking_last_name("ponkey"))
         self.assertTrue(checking_last_name("Sweet"))
