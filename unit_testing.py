@@ -43,7 +43,7 @@ class TestingUserRegistarion(unittest.TestCase):
         self.assertFalse(check_mobile_formet("8 6305114038"))
     
     def test_password(self):
-        self.assertTrue(checking_password("We345sdf24"))
+        self.assertTrue(checking_password("we345Wsdf24"))
         self.assertTrue(checking_password("12234F35342"))
         self.assertTrue(checking_password("QWERT5YUIOP"))
         self.assertFalse(checking_password("!@#$%^&**"))
