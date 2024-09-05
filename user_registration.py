@@ -53,6 +53,7 @@ def email_verification(email):
           Return : 
                 None
     '''
+    
     pattern=r"^[a-z0-9A-Z]+(?:[._%+-][a-zA-Z0-9]+)*@[a-z0-9-A-Z]+\.[a-zA-Z]{2,3}(\.[a-zA-Z]{2,3})?$"
     if re.match(pattern,email):
         return True
