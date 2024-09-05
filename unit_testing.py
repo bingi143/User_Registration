@@ -15,6 +15,14 @@ from user_registration import checking_first_name
 class TestingUserRegistarion(unittest.TestCase):
     
     def test_first_name(self):
+        '''
+          Description: 
+                This function is testing the first name have start with capital
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(checking_first_name("arn"))
         self.assertFalse(checking_first_name("23Vwe"))
         self.assertTrue(checking_first_name("VenKy"))
