@@ -100,7 +100,21 @@ def check_mobile_formet(mobile_number):
         return True
     else:
         return False
-
+    
+def checking_password(password):
+    '''
+          Description: 
+                This function is checking password
+          Parameters: 
+                mobile_number(int): number
+          Return : 
+                None
+    '''
+    pattern=r'\w{8,}'
+    if re.match(pattern,password):
+        return True
+    else:
+        return False
 
 def main():
     first_name = attempt_input("Enter first name: ", checking_first_name, "UC_1", "Invalid first name.")
@@ -116,6 +130,9 @@ def main():
         return 
     mobile_number = attempt_input("Enter phone number: ", check_mobile_formet, "UC_4", "Invalid mobile formate enter country code space and number.")
     if mobile_number is None:
+        return 
+    password = attempt_input("Enter password: ", checking_password, "UC_5", "Invalid password enter minimum 8 charecters")
+    if password is None:
         return 
 
 
