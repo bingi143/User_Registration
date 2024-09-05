@@ -56,7 +56,31 @@ class TestingUserRegistarion(unittest.TestCase):
         self.assertFalse(email_verification("venkybl.co"))
         self.assertFalse(email_verification("@venkatbl.co"))
         self.assertFalse(email_verification("Venky@blco."))
+
+        self.assertTrue(email_verification("abc@yahoo.com"))
+        self.assertTrue(email_verification("abc-100@yahoo.com"))
+        self.assertTrue(email_verification("abc.100@yahoo.com"))
+        self.assertTrue(email_verification("abc111@abc.com"))
+        self.assertTrue(email_verification("abc111@abc.net"))
+        self.assertTrue(email_verification("abc.100@abc.com.au"))
+        self.assertTrue(email_verification("abc@1.com"))
+        self.assertTrue(email_verification("abc@gmail.com.com"))
+        self.assertTrue(email_verification("abc+100@gmail.com"))
+        self.assertFalse(email_verification("abc"))
+        self.assertFalse(email_verification("abc@.com.my"))
+        self.assertFalse(email_verification("abc123@gmail.a"))
+        self.assertFalse(email_verification("abc123@.com"))
+        self.assertFalse(email_verification("abc123@.com.com"))
+        self.assertFalse(email_verification(".abc@abc.com"))
+        self.assertFalse(email_verification("abc()*@gmail.com"))
+        self.assertFalse(email_verification("abc@%*.com"))
+        self.assertFalse(email_verification("abc..2002@gmail.com"))
+        self.assertFalse(email_verification("abc.@gmail.com"))
+        self.assertFalse(email_verification("abc@abc@gmail.com"))
+        self.assertFalse(email_verification("abc@gmail.com.1a"))
+        self.assertFalse(email_verification("abc@gmail.com.aa.au"))
     
+
     def test_mobile_number(self):
         '''
           Description: 
