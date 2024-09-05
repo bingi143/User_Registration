@@ -15,18 +15,41 @@ from user_registration import checking_first_name,checking_last_name,email_verif
 class TestingUserRegistarion(unittest.TestCase):
     
     def test_first_name(self):
+        '''
+          Description: 
+                This function is testing the first name with starting capital latter
+          Parameters: 
+                None
+          Return : 
+        '''
         self.assertTrue(checking_first_name("Monkey"))
         self.assertFalse(checking_first_name("23Vwe"))
         self.assertTrue(checking_first_name("Venkatesh"))
         self.assertFalse(checking_first_name("juewf"))
 
     def test_last_name(self):
+        '''
+          Description: 
+                This function is testing the last name with starting capital latter
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(checking_last_name("Bingi"))
         self.assertFalse(checking_last_name("ponkey"))
         self.assertTrue(checking_last_name("Sweet"))
         self.assertFalse(checking_last_name("venkat"))
 
     def test_email(self):
+        '''
+          Description: 
+                This function is testing the email formate
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(email_verification("venky@bl.co.in"))
         self.assertTrue(email_verification("abc.xyz@bl.co"))
         self.assertTrue(email_verification("123@bl.co"))
@@ -35,6 +58,14 @@ class TestingUserRegistarion(unittest.TestCase):
         self.assertFalse(email_verification("Venky@blco."))
     
     def test_mobile_number(self):
+        '''
+          Description: 
+                This function is testing the phone number
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
         self.assertTrue(check_mobile_formet("91 6305114038"))
         self.assertTrue(check_mobile_formet("88 5453534212"))
         self.assertTrue(check_mobile_formet("71 9087654312"))
@@ -43,13 +74,21 @@ class TestingUserRegistarion(unittest.TestCase):
         self.assertFalse(check_mobile_formet("8 6305114038"))
     
     def test_password(self):
-        self.assertTrue(checking_password("we345Wsdf24"))
-        self.assertTrue(checking_password("12234F35342"))
-        self.assertTrue(checking_password("QWERT5YUIOP"))
+        '''
+          Description: 
+                This function is testing the password pattern
+          Parameters: 
+                None
+          Return : 
+                None
+        '''
+        self.assertTrue(checking_password("we345W^sdf24"))
+        self.assertTrue(checking_password("12234F#35342"))
+        self.assertTrue(checking_password("QWERT@5YUIOP"))
         self.assertFalse(checking_password("!@#$%^&**"))
-        self.assertFalse(checking_password("123asd"))
-        self.assertFalse(checking_password("poiuy"))
-        self.assertFalse(checking_password("<>wewe"))
+        self.assertFalse(checking_password("12Wsd3asd"))
+        self.assertFalse(checking_password("po@3iuy"))
+        self.assertFalse(checking_password("<>wewe12"))
 
 
 def main():
