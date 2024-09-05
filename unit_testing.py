@@ -10,7 +10,7 @@
 ''' 
 
 import unittest
-from user_registration import checking_first_name,checking_last_name,email_verification,check_mobile_formet
+from user_registration import checking_first_name,checking_last_name,email_verification,check_mobile_formet,checking_password
  
 class TestingUserRegistarion(unittest.TestCase):
     
@@ -41,7 +41,17 @@ class TestingUserRegistarion(unittest.TestCase):
         self.assertFalse(check_mobile_formet("916305114038"))
         self.assertFalse(check_mobile_formet("91 63051140"))
         self.assertFalse(check_mobile_formet("8 6305114038"))
- 
+    
+    def test_mail(self):
+        self.assertTrue(checking_password("we345sdf24"))
+        self.assertTrue(checking_password("1223435342"))
+        self.assertTrue(checking_password("QWERTYUIOP"))
+        self.assertFalse(checking_password("!@#$%^&**"))
+        self.assertFalse(checking_password("123asd"))
+        self.assertFalse(checking_password("poiuy"))
+        self.assertFalse(checking_password("<>wewe"))
+
+
 def main():
     t1=TestingUserRegistarion()
     t1.test_first_name()
