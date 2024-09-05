@@ -10,7 +10,7 @@
 ''' 
 
 import unittest
-from user_registration import checking_first_name,checking_last_name,email_verification
+from user_registration import checking_first_name,checking_last_name,email_verification,check_mobile_formet
  
 class TestingUserRegistarion(unittest.TestCase):
     
@@ -33,7 +33,14 @@ class TestingUserRegistarion(unittest.TestCase):
         self.assertFalse(email_verification("venkybl.co"))
         self.assertFalse(email_verification("@venkatbl.co"))
         self.assertFalse(email_verification("Venky@blco."))
-
+    
+    def test_mobile_number(self):
+        self.assertTrue(check_mobile_formet("91 6305114038"))
+        self.assertTrue(check_mobile_formet("88 5453534212"))
+        self.assertTrue(check_mobile_formet("71 9087654312"))
+        self.assertFalse(check_mobile_formet("916305114038"))
+        self.assertFalse(check_mobile_formet("91 63051140"))
+        self.assertFalse(check_mobile_formet("8 6305114038"))
  
 def main():
     t1=TestingUserRegistarion()
