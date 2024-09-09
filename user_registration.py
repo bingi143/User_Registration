@@ -111,7 +111,7 @@ def checking_password(password):
           Return : 
                 None
     '''
-    pattern = r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;"\'<>,.?/~`-]).{8,}$'
+    pattern = r"^(?=.*[A-Z])(?=.*[0-9])(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$)[A-Za-z0-9@#$%^&+=]{8,}$"
     if re.match(pattern,password):
         return True
     else:
