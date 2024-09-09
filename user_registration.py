@@ -110,7 +110,7 @@ def checking_password(password):
           Return : 
                 None
     '''
-    pattern = r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+{}\[\]:;"\'<>,.?/~`-]).{8,}$'
+    pattern = r"^(?=.*[A-Z])(?=.*[0-9])(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$)[A-Za-z0-9@#$%^&+=]{8,}$"
     if re.match(pattern,password):
         return True
     else:
@@ -131,7 +131,7 @@ def main():
     mobile_number = attempt_input("Enter phone number: ", check_mobile_formet, "UC_4", "Invalid mobile formate enter country code space and number.")
     if mobile_number is None:
         return 
-    password = attempt_input("Enter password: ", checking_password, "UC_5", "Invalid password enter minimum 8 charecters")
+    password = attempt_input("Enter password: ", checking_password, "UC_5", "Invalid password enter minimum 8 charecters and one special charecter")
     if password is None:
         return 
 
