@@ -9,45 +9,49 @@
 
 ''' 
 
-import unittest
+import pytest
 from user_registration import checking_first_name,checking_last_name
- 
-class TestingUserRegistarion(unittest.TestCase):
-    
-    def test_first_name(self):
-        '''
-          Description: 
-                This function is testing the first name have start with capital
-          Parameters: 
-                None
-          Return : 
-                None
-        '''
-        self.assertTrue(checking_first_name("Monkey"))
-        self.assertFalse(checking_first_name("23Vwe"))
-        self.assertTrue(checking_first_name("Venkatesh"))
-        self.assertFalse(checking_first_name("juewf"))
 
-    def test_last_name(self):
-        '''
-          Description: 
-                This function is testing the last name have start with capital
-          Parameters: 
-                None
-          Return : 
-                None
-        '''
-        self.assertTrue(checking_last_name("Bingi"))
-        self.assertFalse(checking_last_name("ponkey"))
-        self.assertTrue(checking_last_name("Sweet"))
-        self.assertFalse(checking_last_name("venkat"))
 
- 
+def test_checking_first_name():
+    '''
+        Description: 
+                This function is testing the first name is valid
+        Parameters: 
+                None
+        Return : 
+                None
+    '''
+    assert checking_first_name("Venaktesh")==True
+    assert checking_first_name("Tejaswini")==True
+    assert checking_first_name("Vijay")==True
+    assert checking_first_name("sanju")==False
+    assert checking_first_name("venkatesh")==False
+    assert checking_first_name("Te")==False
+
+
+def test_checking_last_name():
+    '''
+        Description: 
+                This function is testing the last name is valid
+        Parameters: 
+                None
+        Return : 
+                None
+    '''
+    assert checking_last_name("Bingi")==True
+    assert checking_last_name("Daggu")==True
+    assert checking_last_name("Boda")==True
+    assert checking_last_name("kethineni")==False
+    assert checking_last_name("basam")==False
+    assert checking_last_name("bridge")==False
+
+
+
 def main():
-    t1=TestingUserRegistarion()
-    t1.test_first_name()
-    t1.test_last_name()
+    test_checking_first_name()
+    test_checking_last_name()
 
 
 if __name__=="__main__":
-     unittest.main()
+    pytest.main()
