@@ -140,3 +140,5 @@ def main():
 
 if __name__=="__main__":
     pytest.main()
+
+#to execute - python -m pytest
